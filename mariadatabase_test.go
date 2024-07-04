@@ -29,8 +29,8 @@ func Test_Maria_DB(t *testing.T) {
 		conn, err = dbt.DB.CreateConnection()
 		if err != nil {
 			t.Errorf("Error connecting to database: %+v", err)
+			return
 		}
-		defer conn.Close()
 	})
 	t.Run("Create Table", func(t *testing.T) {
 		err := dbt.DB.CreateNamespace(conn, tableName)
@@ -65,6 +65,7 @@ func Test_Maria_DB(t *testing.T) {
 			t.Errorf("Error Deleting table: %+v", err)
 		}
 	})
+	conn.Close()
 }
 
 func Test_Integration_Maria_DB(t *testing.T) {

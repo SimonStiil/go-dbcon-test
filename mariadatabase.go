@@ -187,7 +187,7 @@ func (MDB *MariaDatabase) Get(conn *sql.DB, namespace string, key string) (strin
 	var Key, Value string
 	found := false
 	for rows.Next() {
-		err = rows.Scan(Key, Value)
+		err = rows.Scan(&Key, &Value)
 		if err != nil {
 			Logger.Error("Scan row failed with error", "function", "Get", "struct", "MariaDatabase", "namespace", namespace, "error", err)
 			return "", err
