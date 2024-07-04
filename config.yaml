@@ -1,0 +1,9 @@
+logging: 
+  level: Info
+  format: text
+mysql:
+  address: "127.0.0.1:3306"
+  username: "dbcon-test"
+  # databaseName: "kvdb"
+  # tableName: "kvdb"
+  # envVariableName: # Set if different from KVDB_MYSQL_PASSWORD
