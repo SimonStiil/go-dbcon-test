@@ -29,5 +29,5 @@ require (
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
-	github.com/spf13/viper v1.20.1
+	github.com/spf13/viper v1.21.0
 )
